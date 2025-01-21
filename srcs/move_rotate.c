@@ -16,7 +16,7 @@
   Déplace le premier élément de la pile et le place en dernier              
     -> ra pour la pile a                                                    
     -> rb pour la pile b                                                    
-    -> rr pour les deux piles en simultané f                                 
+    -> rr pour les deux piles en simultané                                 
 */
 
 void	ra(t_stack **a, bool print)
