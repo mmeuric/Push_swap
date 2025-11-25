@@ -25,16 +25,6 @@ This project challenges algorithm design, complexity analysis, and writing effic
 
 Error handling is strict: invalid inputs, duplicates, and overflows print `"Error"`.
 
-## 🚀 Bonus: Checker Program
-
-I implemented the bonus **checker** program, which:
-
-* Reads instructions from stdin
-* Executes them on the given stacks
-* Prints `OK` if the result is correctly sorted, else `KO`
-
-Useful for validating the push_swap output.
-
 ## 📊 Performance
 
 Algorithms adapt depending on input size:
