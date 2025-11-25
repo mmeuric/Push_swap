@@ -11,34 +11,73 @@ This project challenges algorithm design, complexity analysis, and writing effic
 * Handle parsing, errors, duplicates, and edge cases safely.
 * Create an optimized algorithm that minimizes the number of moves.
 * Build a fast and reliable implementation with no crashes or memory leaks.
-* Understand and compare algorithmic complexities (Radix sort, insertion strategies, chunking…).
+* Understand and compare algorithmic complexities (radix, chunking, insertion strategies…).
 
 ## 🛠️ How It Works
 
-* **Input:** a list of integers to sort.
+* **Input:** a list of integers to sort
 * **Stacks:**
 
   * `a` → contains all values at start
   * `b` → empty
-* **Goal:** sort stack `a` in ascending order using only the allowed instructions (`sa`, `pb`, `ra`, `rra`, etc.).
-* The program outputs the operations needed to sort the list — nothing more.
+* **Goal:** output a sequence of operations that sorts stack `a`
+* **Error handling:** invalid input, duplicates or overflow trigger `"Error"`
 
-Error handling is strict: invalid inputs, duplicates, and overflows print `"Error"`.
+Only the allowed instructions (`sa`, `pb`, `ra`, `rra`, etc.) may be used.
+
+## ▶️ How to Test
+
+Run `push_swap` followed by a list of integers:
+
+```bash
+./push_swap "2 3 5 4 7 8"
+```
+
+The program will output a series of instructions, for example:
+
+```
+sa
+pb
+ra
+...
+```
+
+To verify that the output actually sorts the numbers :
+
+```bash
+ARG="2 3 5 4 7 8"
+./push_swap $ARG
+```
+
+Output will be:
+
+```
+OK
+```
+
+if everything is correct.
+
+You can also count the number of moves:
+
+```bash
+ARG="4 67 3 87 23"
+./push_swap $ARG | wc -l
+```
 
 ## 📊 Performance
 
-Algorithms adapt depending on input size:
+This project required achieving strong performance on the official benchmarks:
 
-* Small sets → tailored strategies
-* Larger sets → optimized chunk-based logic
-  My implementation respects all required benchmarks for full validation.
+* **100 numbers** → < 700 operations
+* **500 numbers** → < 5,500 operations
+
+My implementation meets all required thresholds.
 
 ## 📚 What I Learned
 
-Through this project, I strengthened my skills in:
+This project strengthened my understanding of:
 
-* Algorithm design & complexity optimization
-* Data structure manipulation (linked lists / stacks)
-* Error handling and input validation
-* Writing efficient C code under strict constraints
-* Building and testing a complete workflow (push_swap + checker)
+* Algorithm design & optimization
+* Stack manipulation and data structures
+* Efficient C programming
+* Parsing & robust error handling
